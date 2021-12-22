@@ -10,17 +10,16 @@ class Movie {
         $this->title = $_title;
         $this->year = $_year;
         $this->genre = $_genre;
+        $this->setRecommended();
     }
 
-    //Set recommended property using movie vote
-    public function setRecommended($vote) {
-        if ($vote > 6) {
+    //Set recommended property by movie vote
+    public function setRecommended() {
+        if ($this->vote > 6) {
             $this->recommended = true;
+        } else {
+            $this->recommended = false;
         }
-    }
-
-    public function getRecommended() {
-        return $this->recommended;
     }
 }
 
@@ -30,7 +29,7 @@ $fight_club = new Movie('Fight Club', '1999', 'Drama', 9);
 $dark_knight = new Movie('The Dark Knight', '2008', 'Action', 8);
 $sharknado = new Movie('Sharknado', '2013', 'Horror', 3);
 
-var_dump($fight_club, $dark_knight, $sharknado)
+var_dump($fight_club, $dark_knight, $sharknado);
 
    
 
